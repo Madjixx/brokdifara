@@ -69,7 +69,7 @@ import { CommonModule } from '@angular/common';
               <div class="contact-item">
                 <span class="contact-icon">📞</span>
                 <div>
-                  <p>+33 6 82 39 50 55</p>
+                  <p>+33 6 62 39 50 55</p>
                   <p>+33 6 49 51 28 16</p>
                 </div>
               </div>
@@ -77,8 +77,7 @@ import { CommonModule } from '@angular/common';
               <div class="contact-item">
                 <span class="contact-icon">✉️</span>
                 <div>
-                  <p>contact&#64;brokdifara.com</p>
-                  <p>info&#64;brokdifara.com</p>
+                  <p>brokdifarainter&#64;gmail.com</p>
                 </div>
               </div>
             </div>

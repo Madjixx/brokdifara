@@ -214,7 +214,7 @@ import { CommonModule } from '@angular/common';
 export class ProductsComponent {
   products = [
     {
-      name: 'Sucres (Sugar)',
+      name: 'Sucres (Sugar icumsa 45)',
       description: 'Sucre blanc raffiné de première qualité, idéal pour l\'industrie alimentaire et la consommation directe.',
       origin: 'Brésil (Brazil',
       image: 'assets/images/sucre.jpg'

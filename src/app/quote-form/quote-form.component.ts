@@ -44,7 +44,7 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
               <div class="contact-details">
                 <div class="contact-item">
                   <span class="contact-icon">📞</span>
-                  <span>+33 6 82 39 50 55</span>
+                  <span>+33 6 62 39 50 55</span>
                 </div>
                 <div class="contact-item">
                   <span class="contact-icon">📱</span>
@@ -52,7 +52,7 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
                 </div>
                 <div class="contact-item">
                   <span class="contact-icon">✉️</span>
-                  <span>contact&#64;brokdifara.com</span>
+                  <span>brokdifarainter&#64;gmail.com</span>
                 </div>
               </div>
             </div>
@@ -360,7 +360,7 @@ export class QuoteFormComponent {
   this.isSubmitting = true;
 
   const templateParams = {
-    to_email: 'niang.madjiguene94@gmail.com',
+    to_email: 'brokdifarainter@gmail.com',
     company: this.formData.company,
     firstName: this.formData.firstName,
     lastName: this.formData.lastName,
@@ -373,7 +373,7 @@ export class QuoteFormComponent {
   };
 
   emailjs
-    .send('service_dwas97b', 'template_0iay9mk', templateParams, 'ZT6MljcAJcs3pZPbt')
+    .send('service_5z22vfa', 'template_98w2tp1', templateParams, 'jmaAujDkmL7go-Wbn')
     .then((result: EmailJSResponseStatus) => {
       alert('✅ Devis envoyé avec succès !');
       this.resetForm();
