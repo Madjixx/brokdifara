@@ -8,11 +8,13 @@ import { CommonModule } from '@angular/common';
   template: `
     <section id="produits" class="section">
       <div class="container">
-        <h2 class="section-title">Nos Produits Alimentaires</h2>
+        <h2 class="section-title">Nos offres de produits</h2>
         <p class="section-subtitle">
-          Une sélection premium de produits alimentaires de qualité internationale
+          Une sélection premium de produits de qualité internationale
         </p>
-        
+        <div class="produit-info">
+          <h3>Marchandises</h3>
+        </div>
         <div class="products-grid grid grid-3">
           <div class="product-card card fade-in" *ngFor="let product of products; let i = index" 
                [style.animation-delay.ms]="i * 100">
@@ -32,7 +34,50 @@ import { CommonModule } from '@angular/common';
             </div>
           </div>
         </div>
-        
+        <div class="produit-info">
+          <h3>Matières premières</h3>
+        </div>
+        <div class="products-grid grid grid-3">
+          <div class="product-card card fade-in" *ngFor="let product of productsRaw; let i = index" 
+               [style.animation-delay.ms]="i * 100">
+            <div class="product-image">
+              <img [src]="product.image" [alt]="product.name" loading="lazy">
+              <div class="product-overlay">
+                <button class="btn btn-primary">En savoir plus</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">{{ product.name }}</h3>
+              <p class="product-description">{{ product.description }}</p>
+              <div class="product-origin">
+                <span class="origin-label">Origine:</span>
+                <span class="origin-value">{{ product.origin }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="produit-info">
+          <h3>Moyen de transport et Immobilier</h3>
+        </div>
+        <div class="products-grid grid grid-3">
+          <div class="product-card card fade-in" *ngFor="let product of productsTransport; let i = index" 
+               [style.animation-delay.ms]="i * 100">
+            <div class="product-image">
+              <img [src]="product.image" [alt]="product.name" loading="lazy">
+              <div class="product-overlay">
+                <button class="btn btn-primary">En savoir plus</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">{{ product.name }}</h3>
+              <p class="product-description">{{ product.description }}</p>
+              <div class="product-origin">
+                <span class="origin-label">Origine:</span>
+                <span class="origin-value">{{ product.origin }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="cta-section">
           <h3>Besoin d'un produit spécifique ?</h3>
           <p>Contactez-nous pour des demandes personnalisées</p>
@@ -121,6 +166,7 @@ import { CommonModule } from '@angular/common';
       color: #1e40af;
       font-weight: 500;
       font-size: 0.9rem;
+      line-height: 15px;
     }
     
     .cta-section {
@@ -143,6 +189,16 @@ import { CommonModule } from '@angular/common';
       margin-bottom: 24px;
       font-size: 1.1rem;
     }
+
+    .produit-info h3 {
+      color: #1e293b;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      border-bottom:  2px solid #1e293b; 
+      width: auto;
+      display: inline-block;
+    }
     
     @media (max-width: 768px) {
       .product-image {
@@ -158,76 +214,122 @@ import { CommonModule } from '@angular/common';
 export class ProductsComponent {
   products = [
     {
-      name: 'Sucre Premium',
+      name: 'Sucres (Sugar)',
       description: 'Sucre blanc raffiné de première qualité, idéal pour l\'industrie alimentaire et la consommation directe.',
-      origin: 'Brésil, Thaïlande',
-      image: 'https://images.pexels.com/photos/33162/sugar-cubes-white-sugar-sugar-cubes.jpg'
+      origin: 'Brésil (Brazil',
+      image: 'assets/images/sucre.jpg'
     },
     {
-      name: 'Poulet Halal',
+      name: 'Poulet (Chicken)',
       description: 'Viande de poulet fraîche et congelée, certifiée halal, respectant les standards internationaux de qualité.',
-      origin: 'France, Pologne',
-      image: 'https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg'
+      origin: 'Inde, Indonésie, Thaîlande',
+      image: 'assets/images/poulet.jpg'
     },
     {
-      name: 'Riz Premium',
+      name: 'Riz (rice)',
       description: 'Riz long grain de haute qualité, parfait pour l\'exportation et les marchés exigeants.',
-      origin: 'Thaïlande, Vietnam',
-      image: 'https://images.pexels.com/photos/723198/pexels-photo-723198.jpeg'
+      origin: 'Inde , Indonésie, Thaîlande',
+      image: 'assets/images/riz.jpeg'
     },
     {
-      name: 'Huiles Végétales',
+      name: 'Huiles, Soja',
       description: 'Huiles de tournesol, soja et palme raffinées, conditionnées selon vos spécifications.',
-      origin: 'Ukraine, Argentine',
-      image: 'https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg'
+      origin: 'Europe',
+      image: 'assets/images/huile.jpg'
     },
     {
       name: 'Lait en Poudre',
       description: 'Lait en poudre entier et écrémé, riche en nutriments, parfait pour tous usages alimentaires.',
-      origin: 'Nouvelle-Zélande',
-      image: 'https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg'
+      origin: 'Europe',
+      image: 'assets/images/lait.jpg'
     },
     {
-      name: 'Pâtes Alimentaires',
+      name: 'Pâtes (Pasta)',
       description: 'Large gamme de pâtes italiennes traditionnelles, fabriquées avec du blé dur de qualité supérieure.',
-      origin: 'Italie',
-      image: 'https://images.pexels.com/photos/1438672/pexels-photo-1438672.jpeg'
+      origin: 'Europe',
+      image: 'assets/images/pattes.jpg'
     },
     {
       name: 'Noix de Cajou',
       description: 'Noix de cajou premium, calibrées et conditionnées selon les standards internationaux.',
-      origin: 'Côte d\'Ivoire, Vietnam',
-      image: 'https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg'
+      origin: 'Afrique du Nord',
+      image: 'assets/images/noix.jpeg'
     },
     {
-      name: 'Café & Cacao',
+      name: 'Café (coffee), Cacao (cocoa)',
       description: 'Grains de café arabica et cacao de plantation, torréfaction personnalisée disponible.',
-      origin: 'Côte d\'Ivoire, Éthiopie',
-      image: 'https://images.pexels.com/photos/372882/pexels-photo-372882.jpeg'
+      origin: 'Rwanda',
+      image: 'assets/images/cafe.jpeg'
     },
     {
-      name: 'Conserves de Poisson',
+      name: 'Sardines',
       description: 'Sardines et thon en conserve, pêche durable, conditionnement de qualité alimentaire.',
-      origin: 'Maroc, Espagne',
-      image: 'https://images.pexels.com/photos/725997/pexels-photo-725997.jpeg'
+      origin: 'Ethiopie',
+      image: 'assets/images/poisson-conserve.jpg'
     },
     {
-      name: 'Blé Premium',
+      name: 'Blé (wheat)',
       description: 'Blé tendre et dur de qualité boulangère, idéal pour la meunerie et l\'industrie alimentaire.',
       origin: 'France, Ukraine',
-      image: 'https://images.pexels.com/photos/326082/pexels-photo-326082.jpeg'
+      image: 'assets/images/blé.jpeg'
     },
     {
-      name: 'Poissons Frais',
+      name: 'Poisson(fish)',
       description: 'Sélection de poissons frais et surgelés, chaîne du froid respectée, traçabilité garantie.',
-      origin: 'Atlantique Nord',
-      image: 'https://images.pexels.com/photos/128402/pexels-photo-128402.jpeg'
+      origin: 'Mauritanie',
+      image: 'assets/images/poisson.jpg'
     },
     {
-      name: 'Épices & Condiments',
+      name: 'Conserves (canned food)',
       description: 'Large gamme d\'épices et condiments du monde entier, qualité premium garantie.',
-      origin: 'Inde, Madagascar',
-      image: 'https://images.pexels.com/photos/531446/pexels-photo-531446.jpeg'
+      origin: 'United States-China',
+      image: 'assets/images/conserve.jpg'
     }
   ];
+  productsRaw = [
+    {
+      name: 'Fer (iron)',
+      description: 'Fer de haute résistance, adapté pour la construction, la fabrication industrielle et les infrastructures lourdes.',
+      origin: 'Afrique du Sud, Turquie',
+      image: 'assets/images/fer.jpg'
+    },
+    {
+      name: 'Cuivre (copper)',
+      description: 'Cuivre raffiné de qualité supérieure, utilisé dans les secteurs électriques, électroniques et de la plomberie.',
+      origin: 'Afrique',
+      image: 'assets/images/cuivre.jpg'
+    },
+    {
+      name: 'Ciment (cements)',
+      description: 'Ciment Portland de première qualité, garantissant solidité, durabilité et performance pour tous types de constructions.',
+      origin: 'Afrique du Sud, Sénégal, Turquie',
+      image: 'assets/images/ciment.jpg'
+    }];
+    productsTransport = [
+  {
+    name: 'Voiture (Car)',
+    description: 'Véhicules neufs et d’occasion, fiables et performants, conformes aux normes européennes de sécurité et de confort.',
+    origin: 'Belgique',
+    image: 'assets/images/voiture.jpg'
+  },
+  {
+    name: 'Camion (Truck)',
+    description: 'Camions robustes et économiques, adaptés au transport de marchandises lourdes et aux longues distances.',
+    origin: 'Belgique',
+    image: 'assets/images/camion.jpg'
+  },
+  {
+    name: 'Villa (Villa)',
+    description: 'Villas modernes et spacieuses, conçues pour allier confort, élégance et durabilité dans un cadre privilégié.',
+    origin: 'Sénégal, Côte d’Ivoire',
+    image: 'assets/images/villa.jpg'
+  },
+  {
+    name: 'Terrain (Land)',
+    description: 'Terrains bien situés, propices à la construction résidentielle ou commerciale, avec titres fonciers sécurisés.',
+    origin: 'Sénégal, Côte d’Ivoire',
+    image: 'assets/images/terrain.jpg'
+  }
+]
+;
 }

@@ -11,9 +11,19 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
     <section id="devis" class="section quote-section">
       <div class="container">
         <h2 class="section-title">Demander un Devis</h2>
-        <p class="section-subtitle">
-          Obtenez rapidement un devis personnalisé pour vos besoins en produits alimentaires
-        </p>
+        <div class="section-subtitle">
+         Pour vous Préciser les prix, ainsi que les modalités de livraison et de paiement, nous vous remercions de
+          bien vouloir nous transmettre les documents suivants :
+          <ul class="list-disc">
+            <li>Lettre officielle de votre demande à l’attention de notre société</li>
+            <li>LOI pour chaque produit en notre attention avec ICPO</li>
+            <li>TARGET PRICE</li>
+            <li>Garantie BANCAIRE ET/OU PREUVE DE FONDS</li>
+            <li>Mode règlement accepté : tout mode de paiement</li>
+          </ul>
+          A réception de ces éléments, nous ne manquerons pas de répondre à votre demande, dans les meilleurs
+          délais, en vous transmettons, prix, procédure et délai pour chaque produit.
+        </div>
         
         <div class="quote-content grid grid-2">
           <div class="quote-info">
@@ -85,17 +95,18 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
               <select id="products" name="products" [(ngModel)]="formData.products" 
                       required class="form-control">
                 <option value="">Sélectionnez un produit</option>
-                <option value="sucre">Sucre</option>
-                <option value="poulet">Poulet</option>
-                <option value="riz">Riz</option>
-                <option value="huile">Huiles végétales</option>
-                <option value="lait">Lait en poudre</option>
-                <option value="pates">Pâtes alimentaires</option>
-                <option value="cajou">Noix de cajou</option>
-                <option value="cafe-cacao">Café & Cacao</option>
-                <option value="conserves">Conserves de poisson</option>
-                <option value="ble">Blé</option>
-                <option value="poisson">Poissons frais</option>
+                <option value="Sucres (Sugar)">Sucres (Sugar)</option>
+                <option value="Poulet (Chicken)">Poulet (Chicken)</option>
+                <option value="Riz (rice)">Riz (rice)</option>
+                <option value="Huiles, Soja">Huiles, Soja</option>
+                <option value="Lait en Poudre">Lait en poudre</option>
+                <option value="Pâtes (Pasta)">Pâtes (Pasta)</option>
+                <option value="Noix de Cajou">Noix de cajou</option>
+                <option value="Café (coffee), Cacao (cocoa)">Café (coffee), Cacao (cocoa)</option>
+                <option value="Sardines">Sardines</option>
+                <option value="Blé (wheat)">Blé (wheat)</option>
+                <option value="Poisson(fish)">Poisson(fish)</option>
+                <option value="Conserves (canned food)">Conserves (canned food)</option>
                 <option value="autre">Autre (préciser dans le message)</option>
               </select>
             </div>
