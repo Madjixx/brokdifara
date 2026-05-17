@@ -70,7 +70,7 @@ import { CommonModule } from '@angular/common';
                 <span class="contact-icon">📞</span>
                 <div>
                   <p>+33 6 62 39 50 55</p>
-                  <p>+33 6 49 51 28 16</p>
+                  <p>+33 6 49 51 26 16</p>
                 </div>
               </div>
               

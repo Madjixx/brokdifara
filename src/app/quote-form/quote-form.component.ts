@@ -44,11 +44,11 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
               <div class="contact-details">
                 <div class="contact-item">
                   <span class="contact-icon">📞</span>
-                  <span>+33 6 62 39 50 55</span>
+                  <span>+33 06 62 39 50 55</span>
                 </div>
                 <div class="contact-item">
                   <span class="contact-icon">📱</span>
-                  <span>+33 6 49 51 28 16</span>
+                  <span>+33 06 49 51 26 16</span>
                 </div>
                 <div class="contact-item">
                   <span class="contact-icon">✉️</span>
@@ -107,10 +107,14 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
                 <option value="Blé (wheat)">Blé (wheat)</option>
                 <option value="Poisson(fish)">Poisson(fish)</option>
                 <option value="Conserves (canned food)">Conserves (canned food)</option>
-                <option value="autre">Autre (préciser dans le message)</option>
+                <option value="Autres">Autre (préciser dans le message)</option>
               </select>
             </div>
-            
+             <div class="form-group" *ngIf="formData.products === 'Autres'">
+              <label for="email">Autres produits </label>
+              <input type="text" id="other" name="other" [(ngModel)]="formData.other" 
+                     required class="form-control" placeholder="">
+            </div>
             <div class="form-row">
               <div class="form-group">
                 <label for="quantity">Quantité estimée</label>
@@ -326,6 +330,7 @@ export class QuoteFormComponent {
     email: '',
     phone: '',
     products: '',
+    other:  '',
     quantity: '',
     delivery: '',
     message: ''
@@ -367,6 +372,7 @@ export class QuoteFormComponent {
     email: this.formData.email,
     phone: this.formData.phone,
     products: this.formData.products,
+    other: this.formData.other,
     quantity: this.formData.quantity,
     delivery: this.formData.delivery,
     message: this.formData.message,
@@ -393,6 +399,7 @@ export class QuoteFormComponent {
       email: '',
       phone: '',
       products: '',
+      other:'',
       quantity: '',
       delivery: '',
       message: ''
